@@ -31,13 +31,7 @@ router.get("/submit", (req,res) =>{
     .doc(username)
     .set(queryParams)
     .then(function(doc){
-        res.send({
-            "fname":{firstname},
-            "lname":{lastname},
-            "email":{email},
-            "username":{username},
-            "password":{password}
-        });
+        res.send(queryParams);
     }).catch(function(error){
         console.log('error',error);
         res.send("Failed Submission");

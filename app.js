@@ -2,16 +2,15 @@ const express = require("express");
 
 const app = express();
 
-const port = process.env.P0RT || 4000;
+const port = process.env.P0RT || 3000;
 var firebaseConfig = {
-  apiKey: "AIzaSyAf44vrCV1jt-gDSLJlcKjUyvMeLU6K48g",
-  authDomain: "themaze-wiki.firebaseapp.com",
-  databaseURL: "https://themaze-wiki.firebaseio.com",
-  projectId: "themaze-wiki",
-  storageBucket: "themaze-wiki.appspot.com",
-  messagingSenderId: "465822887237",
-  appId: "1:465822887237:web:3d0fce0782498fcd93222c",
-  measurementId: "G-NHP059RLN6"
+  apiKey: "AIzaSyCmeBcqzdkLpVkI3UX8cDp0vxjNstvNVek",
+  authDomain: "exercise-4-8d6f0.firebaseapp.com",
+  databaseURL: "https://exercise-4-8d6f0.firebaseio.com",
+  projectId: "exercise-4-8d6f0",
+  storageBucket: "exercise-4-8d6f0.appspot.com",
+  messagingSenderId: "878998105788",
+  appId: "1:878998105788:web:ae0a4dadf8fb542c2c6ab9"
 };
 const firebase = require("firebase");
 firebase.initializeApp(firebaseConfig);
