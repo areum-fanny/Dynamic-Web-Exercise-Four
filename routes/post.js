@@ -5,12 +5,12 @@ const firebase = require("firebase");
 const db = firebase.firestore();
 
 //Reference a specific collection
-const user = [];
-const things = db.collection("users");
+
+const blogposts = db.collection("blogpost");
 router.get("/", (req,res) => res.send("No ID Provided"));
 router.get("/:id",(req,res) =>{
     const queryId = req.params.id;
-    things
+    blogposts
     .doc(queryId)
     .get()
     .then(function (doc){

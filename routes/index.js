@@ -6,18 +6,19 @@ const firebase = require("firebase");
 const db = firebase.firestore();
 
 //Reference a specific collection
-const user = [];
-const users = db.collection("users")
+
+const blogposts = db.collection("blogpost")
 router.get("/",(req,res) =>{
-    users
+    const blogpostcollection = [];
+    blogposts
     .get()
     .then((querySnapshot)=>{
         console.log("querySnapshot",querySnapshot);
         querySnapshot.forEach(doc => {
-            user.push(doc.data())
+            blogpostcollection.push(doc.data())
         });
         console.log(querySnapshot);
-        return res.send(user);
+        return res.send(blogpostcollection);
     }).catch(function(e) {
         console.warn("error:",e);
         return res.send(error);

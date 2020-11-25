@@ -7,7 +7,7 @@ const db = firebase.firestore();
 
 //Reference a specific collection
 const users = db.collection("users");
-
+const blogposts = db.collection("blogpost");
 const form = `
     <form action="/create/submit">
         <input type="text" name="firstname" placeholder="First Name" />
@@ -19,19 +19,23 @@ const form = `
         <button type="submit">Register</button>
     </form>
 `;
-router.get("/",(req,res) =>res.send(form));
+const form2 = `
+    <form action="/create/submit">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="text" placeholder="Text" />
+        <input type="text" name="author" placeholder="Author" />
+        <button type="submit">Register</button>
+    </form>
+`;
+router.get("/",(req,res) =>res.send(form2));
 router.get("/submit", (req,res) =>{
     const queryParams = req.query;
-    const username = queryParams.username;
-    const firstname = queryParams.firstname;
-    const lastname = queryParams.lastname;
-    const email = queryParams.email;
-    const password = queryParams.password;
-    users
-    .doc(username)
+    const Idfromtitle = queryParams.title.replace(/\s+/g,"-").toLowerCase();
+    blogposts
+    .doc(Idfromtitle)
     .set(queryParams)
     .then(function(doc){
-        res.send(queryParams);
+        res.send("Successful Submission");
     }).catch(function(error){
         console.log('error',error);
         res.send("Failed Submission");
