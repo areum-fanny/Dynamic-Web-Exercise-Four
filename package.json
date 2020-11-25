@@ -11,9 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "expres": "0.0.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "firebase": "^8.0.2"
   },
-  "engines":{
-    "node":"^14.14.0"
+  "engines": {
+    "node": "^14.14.0"
   }
 }
